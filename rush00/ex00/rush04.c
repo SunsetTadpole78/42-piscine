@@ -6,13 +6,13 @@
 /*   By: lroussel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 16:01:19 by lroussel          #+#    #+#             */
-/*   Updated: 2024/07/20 18:00:01 by lroussel         ###   ########.fr       */
+/*   Updated: 2024/07/21 17:57:11 by lroussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_putchar(char c);
 
-int	print_corner(int xi, int yi, int maxX, int maxY)
+int	print_corner04(int xi, int yi, int maxX, int maxY)
 {
 	if (xi == 0 && yi == 0)
 	{
@@ -32,7 +32,7 @@ int	print_corner(int xi, int yi, int maxX, int maxY)
 	return (0);
 }
 
-int	print_edge(int xi, int yi, int maxX, int maxY)
+int	print_edge04(int xi, int yi, int maxX, int maxY)
 {
 	if (xi == 0 || xi == maxX || yi == 0 || yi == maxY)
 	{
@@ -42,25 +42,20 @@ int	print_edge(int xi, int yi, int maxX, int maxY)
 	return (0);
 }
 
-void	rush(int x, int y)
+void	rush04(int x, int y)
 {
 	int	xi;
 	int	yi;
 
-	if (x < 0 || y < 0 || x > 2147483647 || y > 2147483647)
-	{
-		write(1, "Invalid Argument, x & y limits: [0;INT_MAX]\n", 44);
-		return ;
-	}
 	yi = 0;
 	while (yi < y)
 	{
 		xi = 0;
 		while (xi < x)
 		{
-			if (print_corner(xi, yi, x - 1, y - 1) == 0)
+			if (print_corner04(xi, yi, x - 1, y - 1) == 0)
 			{
-				if (print_edge(xi, yi, x - 1, y - 1) == 0)
+				if (print_edge04(xi, yi, x - 1, y - 1) == 0)
 					ft_putchar(' ');
 			}
 			xi++;
