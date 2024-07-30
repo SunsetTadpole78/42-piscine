@@ -25,7 +25,7 @@ int	test_node(t_node *cur, int view[4][9], int n)
 	if (cur->col == n - 1)
 	{
 		check = cur;
-		if (!check_right(&check, view[3]) || !check_left(&check, view[4], n))
+		if (!check_right(&check, view[3]) || !check_left(&check, view[2], n))
 			return (0);
 	}
 	return (1);
